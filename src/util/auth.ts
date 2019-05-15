@@ -1,0 +1,19 @@
+// @ts-ignore
+import Cookies from 'js-cookie'
+
+const TokenKey = 'Admin-Token';
+
+export function getToken() {
+    return Cookies.get(TokenKey)
+}
+
+// @ts-ignore
+export function setToken(token) {
+    console.log('setToken:' + token);
+    return Cookies.set(TokenKey, token)
+}
+
+export function removeToken() {
+    console.log('清除了');
+    return Cookies.remove(TokenKey)
+}
