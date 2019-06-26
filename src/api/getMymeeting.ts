@@ -1,7 +1,8 @@
 
 // @ts-ignore
 import request from '../util/request';
-
+// @ts-ignore
+import { stringify } from 'qs';
 // @ts-ignore
 export function getconference(userID) {
     return request({
@@ -19,9 +20,9 @@ export function getconference(userID) {
 export function deleteconference(conferenceID) {
     return request({
         url: '/conference/cancel',
-        method: 'get',
-        params: {
+        method: 'post',
+        data: stringify({
             conferenceID,
-        },
+        }),
     });
 }

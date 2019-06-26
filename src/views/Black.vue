@@ -8,8 +8,8 @@
         data()
         {
             this.$router.replace({
-                path: '/mymessage',
-                name: 'mymessage'
+                path: '/detail',
+                name: 'detail'
             })
         }
     }

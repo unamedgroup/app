@@ -1,34 +1,132 @@
 <template>
     <div class="PersonalMsg">
-        <div class="photo" v-show="zhao==0">
-            <img :src="avatar" @click="callCamera" alt="摄像头">
-        </div>
-        <div class="photoz" v-show="zhao==1">
-            <div class="photo">
-                <video ref="video" width="200" height="200" autoplay></video>
-                <canvas ref="canvas" width="200" height="200"></canvas>
-            </div>
-            <div class="zhaoxiang">
-                <button type="primary" @click="photograph">拍照</button>
-                <button type="primary" @click="closeCamera">确认</button>
-            </div>
-
-        </div>
-        <!--<div class="zhaoxiang">-->
-            <!--<mu-button style="background-color: #ffffff; color: #008181;" @click="gaizhao">更换图片</mu-button>-->
+        <!--<div class="photo" v-show="zhao==0">-->
+            <!--<img :src="avatar" @click="callCamera" alt="摄像头">-->
         <!--</div>-->
-        <div class="form" >
-            <mt-field label="用户名" v-model="name" style="background-color: #e7f3f3; height: 20px! important"></mt-field>
-            <mt-field label="工号" v-model="userid" style="background-color: #e7f3f3; height: 20px! important"></mt-field>
-            <mt-field label="密码" type="password" v-model="password" style="background-color: #e7f3f3; height: 20px! important"></mt-field>
-            <mt-field label="电话" v-model="phonenumber" type="tel" style="background-color: #e7f3f3; height: 20px! important"></mt-field>
-            <mt-field label="所属部门" v-model="department" style="background-color: #e7f3f3; height: 20px! important"></mt-field>
-        </div>
+        <!--<div class="photoz" v-show="zhao==1">-->
+            <!--<div class="photo">-->
+                <!--<video ref="video" width="200" height="200" autoplay></video>-->
+                <!--<canvas ref="canvas" width="200" height="200"></canvas>-->
+            <!--</div>-->
+            <!--<div class="zhaoxiang">-->
+                <!--<button type="primary" @click="photograph">拍照</button>-->
+                <!--<button type="primary" @click="closeCamera">确认</button>-->
+            <!--</div>-->
 
-        <div class="anniu">
-            <mu-button style="background-color: #008181; color: #ffffff;" @click="unbind">保存更改</mu-button>
+        <!--</div>-->
+        <!--&lt;!&ndash;<div class="zhaoxiang">&ndash;&gt;-->
+            <!--&lt;!&ndash;<mu-button style="background-color: #ffffff; color: #008181;" @click="gaizhao">更换图片</mu-button>&ndash;&gt;-->
+        <!--&lt;!&ndash;</div>&ndash;&gt;-->
+        <!--<div class="form" >-->
+            <!--<mt-field label="用户名" v-model="name" style="background-color: #e7f3f3; height: 20px! important"></mt-field>-->
+            <!--<mt-field label="工号" v-model="userid" style="background-color: #e7f3f3; height: 20px! important"></mt-field>-->
+            <!--<mt-field label="密码" type="password" v-model="password" style="background-color: #e7f3f3; height: 20px! important"></mt-field>-->
+            <!--<mt-field label="电话" v-model="phonenumber" type="tel" style="background-color: #e7f3f3; height: 20px! important"></mt-field>-->
+            <!--<mt-field label="所属部门" v-model="department" style="background-color: #e7f3f3; height: 20px! important"></mt-field>-->
+        <!--</div>-->
+
+        <!--<div class="anniu">-->
+            <!--<mu-button style="background-color: #008181; color: #ffffff;" @click="unbind">保存更改</mu-button>-->
+        <!--</div>-->
+    <!--</div>-->
+        <div class="header">
+            <div class="left" style="height: 60px; width: 20%; display: flex;align-items: center; float: left;" v-on:click="back">
+                <img src="../assets/back.png" height="28">
+            </div>
+            <div class="middle" style="width: 60%; font-weight: bold; font-size: 24px;">
+                个人信息
+            </div>
+            <div class="right" style="width: 20%; font-size: 20px;" @click="update">
+                保存
+            </div>
+        </div>
+        <div class="bank" style="height: 15px; width: 100%; background-color: #f3f5f7"></div>
+        <div class="form">
+            <div class="name" style="height: 60px; width: 100%; background-color: #fefefe">
+                <div class="bian" style="height: 60px; width: 5%; float: left"></div>
+                <div class="ming" style="height: 60px; width: 15%; color: #818181;float: left; font-family: 黑体; font-size: 22px">
+                   姓名
+                </div>
+                <div class="bian" style="height: 60px; width: 5%; float: left"></div>
+                <div class="inpu1" style="height: 60px; width: 58%; float: left; display: flex; align-items: center; font-size: 22px; font-family: 黑体">
+                    <!--<input v-model="usermsg.realName">-->
+                    {{ usermsg.realName }}
+                </div>
+            </div>
+            <div class="jiange" style="height: 1.2px; width: 100%;">
+                <div class="zuo" style="height: 1.2px; width: 5%; background-color: #fefefe; float: left"></div>
+                <div class="you" style="height: 1.2px; width: 95%; background-color: #efefef; float: left"></div>
+            </div>
+            <div class="name" style="height: 60px; width: 100%; background-color: #fefefe">
+                <div class="bian" style="height: 60px; width: 5%; float: left"></div>
+                <div class="ming" style="height: 60px; width: 15%; color: #818181;float: left; font-family: 黑体; font-size: 22px">
+                    部门
+                </div>
+                <div class="bian" style="height: 60px; width: 5%; float: left"></div>
+                <div class="inpu1" style="height: 60px; width: 58%; float: left; display: flex; align-items: center; font-size: 22px; font-family: 黑体">
+                    <!--<input v-model="usermsg.department" >-->
+                    {{ usermsg.department }}
+                </div>
+            </div>
+            <div class="jiange" style="height: 1.2px; width: 100%;">
+                <div class="zuo" style="height: 1.2px; width: 5%; background-color: #fefefe; float: left"></div>
+                <div class="you" style="height: 1.2px; width: 95%; background-color: #efefef; float: left"></div>
+            </div>
+            <div class="name" style="height: 60px; width: 100%; background-color: #fefefe">
+                <div class="bian" style="height: 60px; width: 5%; float: left"></div>
+                <div class="ming" style="height: 60px; width: 15%; color: #818181;float: left; font-family: 黑体; font-size: 22px">
+                    ID号
+                </div>
+                <div class="bian" style="height: 60px; width: 5%; float: left"></div>
+                <div class="inpu1" style="height: 60px; width: 58%; float: left; display: flex; align-items: center; font-size: 22px; font-family: 黑体">
+                    <!--<input v-model="usermsg.userID">-->
+                    {{ usermsg.userID }}
+                </div>
+            </div>
+            <div class="jiange" style="height: 1.2px; width: 100%;">
+                <div class="zuo" style="height: 1.2px; width: 5%; background-color: #fefefe; float: left"></div>
+                <div class="you" style="height: 1.2px; width: 95%; background-color: #efefef; float: left"></div>
+            </div>
+            <div class="name" style="height: 60px; width: 100%; background-color: #fefefe">
+                <div class="bian" style="height: 60px; width: 5%; float: left"></div>
+                <div class="ming" style="height: 60px; width: 15%; color: #818181;float: left; font-family: 黑体; font-size: 22px">
+                    电话
+                </div>
+                <div class="bian" style="height: 60px; width: 5%; float: left"></div>
+                <div class="inpu" style="height: 60px; width: 58%; float: left">
+                    <input v-model="usermsg.phoneNumber">
+                </div>
+                <div class="submit" style="height: 60px; width: 17%;float: left;">点击修改</div>
+            </div>
+            <div class="jiange" style="height: 1.2px; width: 100%;">
+                <div class="zuo" style="height: 1.2px; width: 5%; background-color: #fefefe; float: left"></div>
+                <div class="you" style="height: 1.2px; width: 95%; background-color: #efefef; float: left"></div>
+            </div>
+            <div class="name" style="height: 60px; width: 100%; background-color: #fefefe">
+                <div class="bian" style="height: 60px; width: 5%; float: left"></div>
+                <div class="ming" style="height: 60px; width: 15%; color: #818181;float: left; font-family: 黑体; font-size: 22px">
+                    邮箱
+                </div>
+                <div class="bian" style="height: 60px; width: 5%; float: left"></div>
+                <div class="inpu" style="height: 60px; width: 58%; float: left">
+                    <input v-model="usermsg.email">
+                </div>
+                <div class="submit" style="height: 60px; width: 17%;float: left;">点击修改</div>
+            </div>
+        </div>
+        <div class="bank" style="height: 15px; width: 100%; background-color: #f3f5f7"></div>
+        <div class="name" style="height: 60px; width: 100%; background-color: #fefefe">
+            <div class="bian" style="height: 60px; width: 5%; float: left;"></div>
+            <div class="wenzi" style="height: 60px; width: 37%;float: left; color: #818181; font-family: 黑体; font-size: 22px">录入人脸信息</div>
+            <div class="bank" style="height: 60px; width: 47%; float: left;"></div>
+            <div class="left" style="height: 60px; width: 11%; display: flex;align-items: center; float: left;" @click="put">
+                <img src="../assets/put.png" height="28">
+            </div>
         </div>
     </div>
+
+
+
 </template>
 
 <script>
@@ -36,19 +134,38 @@
         name: "PersonalMsg",
         data(){
             return{
-                name: '刘孟骁',
-                userid: '1607020101',
-                password: '205544',
-                phonenumber: '17864214150',
-                department: '开发部门',
-                zhao: 0,
-                avatar: require('../assets/touxiang.jpg'),
-                userID: this.$store.state.userID,
+                usermsg: this.$store.state.usermsg,
             }
         },
         methods:{
-            unbind(){
-                this.$messagebox.alert("操作成功");
+            back(){
+                this.$router.push('/zhuye');
+            },
+            update(){
+                // let form={
+                //     userID: this.$store.state.userID,
+                //     email: this.usermsg.email,
+                // };
+                // this.$store.dispatch('updateEmail',form);
+                //
+                // let form1={
+                //     userID: this.$store.state.userID,
+                //     phoneNumber: this.usermsg.phoneNumber,
+                // };
+                // this.$store.dispatch('updatePhone',form1);
+                let form={
+                    email: this.usermsg.email,
+                    phoneNumber: this.usermsg.phoneNumber,
+                };
+                this.$store.dispatch('updateMsg',form).then(()=>{
+                    this.$router.push({
+                        name: 'login2',
+                        params: {
+                            username: this.usermsg.phoneNumber,
+                        }
+                    })
+                })
+
             },
             // gaizhao()
             // {
@@ -148,16 +265,27 @@
                 //     this.$messagebox.alert(form.userID);
                 // })
             },
+
+            put(){
+                this.$router.push({path: '/photo'});
+            }
         }
 
     }
 </script>
 
 <style scoped>
-    .photo{
-        height: 350px;
+    .header{
+        height: 60px;
         width: 100%;
-        background-color: #008181;
+        background-color: #fefefe;
+        color: #353535;
+        font-family: 黑体;
+    }
+
+    .middle,.right{
+        height: 60px;
+        float: left;
         display: -webkit-flex;
         display: flex;
         -webkit-align-items: center;
@@ -166,10 +294,9 @@
         justify-content: center;
     }
 
-    .zhaoxiang{
-        height: 50px;
-        width: 100%;
-        background-color: #008181;
+    .bian,.ming,.inpu,.you,.wenzi{
+        height: 60px;
+        float: left;
         display: -webkit-flex;
         display: flex;
         -webkit-align-items: center;
@@ -178,23 +305,22 @@
         justify-content: center;
     }
 
-    .form{
-        height: 300px;
+    input{
+        height: 40px;
         width: 100%;
         font-size: 20px;
-        background-color: #e7f3f3;
-        padding-top: 30px;
+        font-family: 黑体;
+        border: 0;
+        outline: none;
     }
-
-    .anniu{
-        height: 85px;
-        width: 100%;
-        background-color: #e7f3f3;
+    
+    .submit{
         display: -webkit-flex;
         display: flex;
         -webkit-align-items: center;
         align-items: center;
         -webkit-justify-content: center;
         justify-content: center;
+        color: #818181;
     }
 </style>

@@ -4,7 +4,9 @@ import store from '../store'
 import MessageBox from "mint-ui/packages/message-box/src/message-box";
 
 const service = axios.create({
-    baseURL: 'http://47.103.6.243:8080',
+    // baseURL: 'http://47.103.6.243:8080',
+    // baseURL: 'http://172.26.177.59:8080',
+    baseURL: 'http://172.19.138.203:8080',
     timeout: 5000
 });
 
@@ -13,7 +15,7 @@ service.interceptors.request.use(
     config => {
         console.log('发请求'+getToken());
         if(store.state.token){
-            config.headers.Authorization = getToken()
+            config.headers.Authorization = getToken();
         }
         console.log('付彤加油');
         return config
@@ -28,8 +30,17 @@ service.interceptors.response.use(
     response => {
 
         console.log('Resp=>');
+        if(response==null){
+            MessageBox.alert(0);
+        }
         const res = response.data;
         console.log(response.data);
+        if(res.status==0 && res.data=="设置人脸成功"){
+            MessageBox.alert(res.data);
+        }
+        if(res.status==200){
+            MessageBox.alert("开启成功！");
+        }
         if(res.status !== 0 && res.status!==7002){
             // Message({
             //     message: res.message,

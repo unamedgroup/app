@@ -3,21 +3,13 @@ import Router from 'vue-router';
 // @ts-ignore
 import table from './views/table';
 // @ts-ignore
-import rili from './views/rili'
-// @ts-ignore
-import result from './views/ResearchResult';
-// @ts-ignore
 import Login from './views/Login';
 // @ts-ignore
 import zhuye from './views/zhuye';
 // @ts-ignore
 import shebei from './views/shebei';
 // @ts-ignore
-import kongtiao from './views/kongtiao';
-// @ts-ignore
 import PersonalMsg from './views/PersonalMsg';
-// @ts-ignore
-import myreserve from './views/myreserve';
 // @ts-ignore
 import rili2 from './views/rili2';
 // @ts-ignore
@@ -28,6 +20,18 @@ import mymessage from './views/mymessage';
 import Supply from './views/Supply';
 // @ts-ignore
 import Black from './views/Black';
+// @ts-ignore
+import Register from './views/Register';
+// @ts-ignore
+import photo from './views/photo';
+// @ts-ignore
+import detail from './views/detail';
+// @ts-ignore
+import table2 from './views/table2';
+// @ts-ignore
+import login2 from './views/login2';
+// @ts-ignore
+import login3 from './views/login3';
 Vue.use(Router);
 
 // @ts-ignore
@@ -41,23 +45,13 @@ export default new Router({
       component: table,
     },
     {
-      path: '/rili',
-      name: rili,
-      component: rili,
-    },
-      {
-          path:'/result',
-          name: result,
-          component: result,
-      },
-    {
       path: '/login',
-      name: Login,
+      name: 'Login',
       component: Login,
     },
     {
       path: '/zhuye',
-      name: zhuye,
+      name: 'zhuye',
       component: zhuye,
     },
     {
@@ -66,19 +60,9 @@ export default new Router({
       component: shebei,
     },
     {
-      path: '/kongtiao',
-      name: kongtiao,
-      component: kongtiao,
-    },
-    {
       path: '/person',
       name: PersonalMsg,
       component: PersonalMsg,
-    },
-    {
-      path: '/myreserve',
-      name: myreserve,
-      component: myreserve,
     },
     {
       path: '/rili2',
@@ -104,6 +88,36 @@ export default new Router({
       path: '/black',
       name: 'Black',
       component: Black,
+    },
+    {
+      path: '/register',
+      name: 'Register',
+      component: Register,
+    },
+    {
+      path: '/photo',
+      name: photo,
+      component: photo,
+    },
+    {
+      path: '/detail',
+      name: 'detail',
+      component: detail,
+    },
+    {
+      path: '/table2',
+      name: 'table2',
+      component: table2,
+    },
+    {
+      path: '/login2',
+      name: 'login2',
+      component: login2,
+    },
+    {
+      path: '/login3',
+      name: 'login3',
+      component: login3,
     },
   ],
 });

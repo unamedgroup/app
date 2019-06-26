@@ -43,3 +43,50 @@ export function SeePeople(conferenceID)
     });
 }
 
+export function getAll()
+{
+    return request({
+        url: '/user/currentUserInfo',
+        method: 'get',
+    });
+}
+
+
+// @ts-ignore
+export function updateMsg(email, phoneNumber)
+{
+    return request({
+        url: '/user/currentUserInfo',
+        method: 'post',
+        data: stringify({
+            email,
+            phoneNumber,
+        }),
+    });
+}
+
+// @ts-ignore
+export function updateEmail(userID,email)
+{
+    return request({
+        url: '/userManage/modifyEmail',
+        method: 'post',
+        data: stringify({
+            userID,
+            email,
+        }),
+    });
+}
+
+// @ts-ignore
+export function updatePhone(userID,phoneNumber)
+{
+    return request({
+        url: '/userManage/modifyMobile',
+        method: 'post',
+        data: stringify({
+            userID,
+            phoneNumber,
+        }),
+    });
+}

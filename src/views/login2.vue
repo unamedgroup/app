@@ -1,60 +1,5 @@
 <template>
-    <div class="Login">
-        <!--<div class="zong">-->
-            <!--<div class="middle">-->
-                <!--<div class="left"></div>-->
-                <!--<div class="zhong">-->
-            <!--<div class="header"></div>-->
-                    <!--<div class="photo">-->
-                        <!--<img src="../assets/meeting.png" width="130" height="130">-->
-                    <!--</div>-->
-                    <!--<div class="wenzi">-->
-                        <!--智能会议室管理系统-->
-                    <!--</div>-->
-                <!--</div>-->
-                <!--<div class="right"></div>-->
-            <!--</div>-->
-        <!--</div>-->
-
-
-        <!--<div class="footer">-->
-            <!--<div class="user">-->
-                <!--<img src="../assets/phone.png" width="35" height="35">-->
-                <!--&nbsp;&nbsp;-->
-                <!--<input type="text" v-model="loginform.username">-->
-            <!--</div>-->
-
-            <!--<div class="password" style="padding-top: 30px;">-->
-                <!--<img src="../assets/password.png" width="35" height="35">-->
-                <!--&nbsp;&nbsp;-->
-                <!--<input type="password" v-model="loginform.password">-->
-            <!--</div>-->
-        <!--</div>-->
-
-        <!--<div class="zhengwen" style="height: 300px; width: 100%; background-color: #e7f3f3">-->
-                <!--<div class="login">-->
-                    <!--<mu-button style="background-color: #008181; color: #E4F1F5;font-size: 20px;height: 50px; width: 250px;! important" @click="login">-->
-                        <!--登&nbsp;&nbsp;&nbsp;&nbsp;录</mu-button>-->
-                <!--</div>-->
-
-
-            <!--<div class="qita">-->
-                <!--&#45;&#45;&#45;&#45;&#45;&#45;  其他方式登录  &#45;&#45;&#45;&#45;&#45;&#45;-->
-            <!--</div>-->
-            <!--<div class="fangshi">-->
-                <!--<div class="zuo"></div>-->
-                <!--<div class="zhong1">-->
-                    <!--<img src="../assets/face.png">-->
-                <!--</div>-->
-                <!--<div class="zhong2">-->
-                    <!--<img src="../assets/bangong.png" height="70" width="70">-->
-                <!--</div>-->
-                <!--<div class="zhong3">-->
-                    <!--<img src="../assets/Wechat.png">-->
-                <!--</div>-->
-                <!--<div class="you"></div>-->
-            <!--</div>-->
-        <!--</div>-->
+    <div class="login2">
         <div class="head"></div>
         <div class="tu">
             <img src="../assets/logo1.png" height="130">
@@ -91,21 +36,17 @@
                 href="https://github.com/unamedgroup" target="_blank">https://github.com/unamedgroup</a>
         </div>
     </div>
-
 </template>
 
 <script>
-    import axios from 'axios'
-
     export default {
-        name: "Login",
+        name: "login2",
         data(){
             return{
                 loginform: {
-                    username: '',
-                    password: '',
+                    username: this.$route.params.username,
+                    password: '123456',
                 },
-                number: '',
             }
         },
         methods: {
@@ -134,12 +75,10 @@
             }
 
         }
-
     }
 </script>
 
 <style scoped>
-
     .Login{
         background-color: #f4f5f5;
     }

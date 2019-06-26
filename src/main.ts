@@ -22,6 +22,14 @@ import Message from 'muse-ui-message';
 import md5 from 'js-md5';
 // @ts-ignore
 import { Search } from 'mint-ui';
+import { Field } from 'vant';
+// @ts-ignore
+import { DatetimePicker } from 'mint-ui';
+
+Vue.component(DatetimePicker.name, DatetimePicker);
+
+
+Vue.use(Field);
 
 Vue.component(Search.name, Search);
 // @ts-ignore

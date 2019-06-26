@@ -1,5 +1,5 @@
 <template>
-    
+
 </template>
 
 <script>
@@ -8,8 +8,8 @@
         data()
         {
             this.$router.replace({
-                path: '/mymessage',
-                name: 'mymessage'
+                path: '/zhuye',
+                name: 'zhuye'
             })
         }
     }

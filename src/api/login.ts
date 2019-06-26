@@ -36,3 +36,19 @@ export function test() {
         method: 'get',
     });
 }
+
+// @ts-ignore
+export function register(password,realName,department,email,phoneNumber,userGroup){
+    return request({
+        url: '/user/signup',
+        method: 'post',
+        data: stringify({
+            password,
+            realName,
+            department,
+            email,
+            phoneNumber,
+            userGroup,
+        }),
+    });
+}

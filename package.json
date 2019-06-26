@@ -18,11 +18,13 @@
     "muse-ui-message": "^0.2.1",
     "qs": "^6.7.0",
     "register-service-worker": "^1.6.2",
+    "vant": "^1.6.19",
     "vue": "^2.6.6",
     "vue-class-component": "^6.0.0",
     "vue-property-decorator": "^8.0.0",
     "vue-router": "^3.0.1",
-    "vuex": "^3.0.1"
+    "vuex": "^3.0.1",
+    "vux": "^2.9.4"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "^3.5.0",
@@ -33,6 +35,7 @@
     "sass": "^1.17.2",
     "sass-loader": "^7.1.0",
     "typescript": "^3.2.1",
-    "vue-template-compiler": "^2.5.21"
+    "vue-template-compiler": "^2.5.21",
+    "vux-loader": "^1.2.9"
   }
 }
